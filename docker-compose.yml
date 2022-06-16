@@ -5,8 +5,8 @@ services:
         container_name: mongodb
         restart: unless-stopped
         environment:
-            MONGO_INITDB_ROOT_USERNAME: root
-            MONGO_INITDB_ROOT_PASSWORD: anka
+            MONGO_INITDB_ROOT_USERNAME: salihasoyturk
+            MONGO_INITDB_ROOT_PASSWORD: ankageo
         ports:
             - 27017:27017
         volumes:
@@ -20,6 +20,8 @@ services:
         ports:
             - 8081:8081
         environment:
-            ME_CONFIG_MONGODB_ADMINUSERNAME: root
-            ME_CONFIG_MONGODB_ADMINPASSWORD: anka
+            ME_CONFIG_MONGODB_ADMINUSERNAME: salihasoyturk
+            ME_CONFIG_MONGODB_ADMINPASSWORD: ankageo
             ME_CONFIG_MONGODB_SERVER: mongodb
+        depends_on:
+            - mongodb
